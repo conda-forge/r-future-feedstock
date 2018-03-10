@@ -26,13 +26,13 @@ requirements:
   build:
     - r-base
     - r-digest
-    - r-globals >=0.10.2
+    - r-globals >=0.11.0
     - r-listenv >=0.6.0
 
   run:
     - r-base
     - r-digest
-    - r-globals >=0.10.2
+    - r-globals >=0.11.0
     - r-listenv >=0.6.0
 
 test:

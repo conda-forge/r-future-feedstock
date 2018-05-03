@@ -1,4 +1,4 @@
-{% set version = "1.8.0" %}
+{% set version = "1.8.1" %}
 
 {% set posix = 'm2-' if win else '' %}
 {% set native = 'm2w64-' if win else '' %}
@@ -12,7 +12,7 @@ source:
   url:
     - https://cran.r-project.org/src/contrib/future_{{ version }}.tar.gz
     - https://cran.r-project.org/src/contrib/Archive/future/future_{{ version }}.tar.gz
-  sha256: 8c5c28a6d005eef035026f3546fe52f8d7a1161148353c423521f3e81477d724
+  sha256: 2a1007510bb37a38d22f275dd64140af89ff3516071e51cec01db556d032fdae
 
 build:
   number: 0

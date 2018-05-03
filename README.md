@@ -14,14 +14,16 @@ Summary: The purpose of this package is to provide a lightweight and unified Fut
 Current build status
 ====================
 
-Linux: [![Circle CI](https://circleci.com/gh/conda-forge/r-future-feedstock.svg?style=shield)](https://circleci.com/gh/conda-forge/r-future-feedstock)
-OSX: [![TravisCI](https://travis-ci.org/conda-forge/r-future-feedstock.svg?branch=master)](https://travis-ci.org/conda-forge/r-future-feedstock)
-Windows: [![AppVeyor](https://ci.appveyor.com/api/projects/status/github/conda-forge/r-future-feedstock?svg=True)](https://ci.appveyor.com/project/conda-forge/r-future-feedstock/branch/master)
+[![Linux](https://img.shields.io/circleci/project/github/conda-forge/r-future-feedstock/master.svg?label=Linux)](https://circleci.com/gh/conda-forge/r-future-feedstock)
+[![OSX](https://img.shields.io/travis/conda-forge/r-future-feedstock/master.svg?label=macOS)](https://travis-ci.org/conda-forge/r-future-feedstock)
+[![Windows](https://img.shields.io/appveyor/ci/conda-forge/r-future-feedstock/master.svg?label=Windows)](https://ci.appveyor.com/project/conda-forge/r-future-feedstock/branch/master)
 
 Current release info
 ====================
-Version: [![Anaconda-Server Badge](https://anaconda.org/conda-forge/r-future/badges/version.svg)](https://anaconda.org/conda-forge/r-future)
-Downloads: [![Anaconda-Server Badge](https://anaconda.org/conda-forge/r-future/badges/downloads.svg)](https://anaconda.org/conda-forge/r-future)
+
+| Name | Downloads | Version | Platforms |
+| --- | --- | --- | --- |
+| [![Conda Recipe](https://img.shields.io/badge/recipe-r--future-green.svg)](https://anaconda.org/conda-forge/r-future) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/r-future.svg)](https://anaconda.org/conda-forge/r-future) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/r-future.svg)](https://anaconda.org/conda-forge/r-future) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/r-future.svg)](https://anaconda.org/conda-forge/r-future) |
 
 Installing r-future
 ===================

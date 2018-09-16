@@ -1,5 +1,4 @@
-{% set version = "1.9.0" %}
-
+{% set version = '1.9.0' %}
 {% set posix = 'm2-' if win else '' %}
 {% set native = 'm2w64-' if win else '' %}
 
@@ -10,12 +9,13 @@ package:
 source:
   fn: future_{{ version }}.tar.gz
   url:
-    - https://cran.r-project.org/src/contrib/future_{{ version }}.tar.gz
-    - https://cran.r-project.org/src/contrib/Archive/future/future_{{ version }}.tar.gz
+    - {{ cran_mirror }}/src/contrib/future_{{ version }}.tar.gz
+    - {{ cran_mirror }}/src/contrib/Archive/future/future_{{ version }}.tar.gz
   sha256: d807c19d85dc47a28dd391eab3d67b8d1b91070ffb26a8b2b987c6c447d0cd14
 
 build:
-  number: 0
+  merge_build_host: True  # [win]
+  number: 1
   skip: true  # [win32]
   rpaths:
     - lib/R/lib/
@@ -23,20 +23,21 @@ build:
 
 requirements:
   build:
+    - {{posix}}zip               # [win]
+  host:
     - r-base
     - r-digest
-    - r-globals >=0.11.0
-    - r-listenv >=0.6.0
-
+    - r-globals >=0.12.0
+    - r-listenv >=0.7.0
   run:
     - r-base
     - r-digest
-    - r-globals >=0.11.0
-    - r-listenv >=0.6.0
+    - r-globals >=0.12.0
+    - r-listenv >=0.7.0
 
 test:
   commands:
-    - $R -e "library('future')"  # [not win]
+    - $R -e "library('future')"           # [not win]
     - "\"%R%\" -e \"library('future')\""  # [win]
 
 about:
@@ -46,11 +47,11 @@ about:
     sequential and parallel processing of R expression via futures.  The simplest way
     to evaluate an expression in parallel is to use `x %<-% { expression }` with `plan(multiprocess)`.
     This package implements sequential, multicore, multisession, and cluster futures.  With
-    these, R expressions can be evaluated on the local machine, on in parallel a set
-    of local machines, or distributed on a mix of local and remote machines. Extensions
-    to this package implements additional backends for processing futures via compute
-    cluster schedulers etc. Because of its unified API, there is no need to modify code
-    in order switch from sequential on the local machine to, say, distributed processing
+    these, R expressions can be evaluated on the local machine, in parallel a set of
+    local machines, or distributed on a mix of local and remote machines. Extensions
+    to this package implement additional backends for processing futures via compute
+    cluster schedulers etc. Because of its unified API, there is no need to modify any
+    code in order switch from sequential on the local machine to, say, distributed processing
     on a remote compute cluster. Another strength of this package is that global variables
     and functions are automatically identified and exported as needed, making it straightforward
     to tweak existing code to make use of futures.
@@ -63,3 +64,4 @@ extra:
     - daler
     - jdblischak
     - cbrueffer
+    - dbast

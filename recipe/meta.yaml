@@ -24,7 +24,7 @@ build:
 requirements:
   build:
 
-host:
+  host:
     - r-base
     - r-digest
     - r-globals >=0.12.1

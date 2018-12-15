@@ -1,4 +1,4 @@
-{% set version = '1.9.0' %}
+{% set version = '1.10.0' %}
 {% set posix = 'm2-' if win else '' %}
 {% set native = 'm2w64-' if win else '' %}
 
@@ -11,28 +11,28 @@ source:
   url:
     - {{ cran_mirror }}/src/contrib/future_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/future/future_{{ version }}.tar.gz
-  sha256: d807c19d85dc47a28dd391eab3d67b8d1b91070ffb26a8b2b987c6c447d0cd14
+  sha256: 625ca85f4bd2cdffe4ebac0e93db88474c1e9e5ab74a3a9457f226615f59b51d
 
 build:
   noarch: generic
   merge_build_host: True  # [win]
-  number: 1001
+  number: 1000
   rpaths:
     - lib/R/lib/
     - lib/
 
 requirements:
   build:
-    - {{posix}}zip               # [win]
-  host:
+
+host:
     - r-base
     - r-digest
-    - r-globals >=0.12.0
+    - r-globals >=0.12.1
     - r-listenv >=0.7.0
   run:
     - r-base
     - r-digest
-    - r-globals >=0.12.0
+    - r-globals >=0.12.1
     - r-listenv >=0.7.0
 
 test:

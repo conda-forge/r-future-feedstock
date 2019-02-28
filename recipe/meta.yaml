@@ -1,4 +1,4 @@
-{% set version = '1.10.0' %}
+{% set version = '1.11.1.1' %}
 {% set posix = 'm2-' if win else '' %}
 {% set native = 'm2w64-' if win else '' %}
 
@@ -7,32 +7,31 @@ package:
   version: {{ version|replace("-", "_") }}
 
 source:
-  fn: future_{{ version }}.tar.gz
   url:
     - {{ cran_mirror }}/src/contrib/future_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/future/future_{{ version }}.tar.gz
-  sha256: 625ca85f4bd2cdffe4ebac0e93db88474c1e9e5ab74a3a9457f226615f59b51d
+  sha256: 7190fff2cdc9dbdf0bc5242cfb2db94fba5e61a54a7d66d8cf2dd44a1ef694e8
 
 build:
-  noarch: generic
   merge_build_host: True  # [win]
-  number: 1000
+  number: 0
+  noarch: generic
   rpaths:
     - lib/R/lib/
     - lib/
 
 requirements:
   build:
-
+    - {{posix}}zip               # [win]
   host:
     - r-base
     - r-digest
-    - r-globals >=0.12.1
+    - r-globals >=0.12.4
     - r-listenv >=0.7.0
   run:
     - r-base
     - r-digest
-    - r-globals >=0.12.1
+    - r-globals >=0.12.4
     - r-listenv >=0.7.0
 
 test:
@@ -56,12 +55,29 @@ about:
     and functions are automatically identified and exported as needed, making it straightforward
     to tweak existing code to make use of futures.
   license_family: LGPL
+  license_file: '{{ environ["PREFIX"] }}/lib/R/share/licenses/LGPL-2.1'
 
 extra:
   recipe-maintainers:
-    - johanneskoester
-    - bgruening
-    - daler
-    - jdblischak
-    - cbrueffer
-    - dbast
+    - conda-forge/r
+
+# Package: future
+# Version: 1.11.1.1
+# Title: Unified Parallel and Distributed Processing in R for Everyone
+# Imports: digest, globals (>= 0.12.4), listenv (>= 0.7.0), parallel, utils
+# Suggests: R.rsp, markdown
+# VignetteBuilder: R.rsp
+# Authors@R: c(person("Henrik", "Bengtsson", role=c("aut", "cre", "cph"), email = "henrikb@braju.com"))
+# Description: The purpose of this package is to provide a lightweight and unified Future API for sequential and parallel processing of R expression via futures.  The simplest way to evaluate an expression in parallel is to use `x %<-% { expression }` with `plan(multiprocess)`. This package implements sequential, multicore, multisession, and cluster futures.  With these, R expressions can be evaluated on the local machine, in parallel a set of local machines, or distributed on a mix of local and remote machines. Extensions to this package implement additional backends for processing futures via compute cluster schedulers etc. Because of its unified API, there is no need to modify any code in order switch from sequential on the local machine to, say, distributed processing on a remote compute cluster. Another strength of this package is that global variables and functions are automatically identified and exported as needed, making it straightforward to tweak existing code to make use of futures.
+# License: LGPL (>= 2.1)
+# LazyLoad: TRUE
+# ByteCompile: TRUE
+# URL: https://github.com/HenrikBengtsson/future
+# BugReports: https://github.com/HenrikBengtsson/future/issues
+# RoxygenNote: 6.1.1
+# NeedsCompilation: no
+# Packaged: 2019-01-25 18:10:06 UTC; hb
+# Author: Henrik Bengtsson [aut, cre, cph]
+# Maintainer: Henrik Bengtsson <henrikb@braju.com>
+# Repository: CRAN
+# Date/Publication: 2019-01-26 23:30:03 UTC

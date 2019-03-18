@@ -1,4 +1,4 @@
-{% set version = '1.11.1.1' %}
+{% set version = '1.12.0' %}
 {% set posix = 'm2-' if win else '' %}
 {% set native = 'm2w64-' if win else '' %}
 
@@ -10,7 +10,7 @@ source:
   url:
     - {{ cran_mirror }}/src/contrib/future_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/future/future_{{ version }}.tar.gz
-  sha256: 7190fff2cdc9dbdf0bc5242cfb2db94fba5e61a54a7d66d8cf2dd44a1ef694e8
+  sha256: f5460b8299cd03e95996c75a81aebe7f0553904ada9eb132679a36ef343c188a
 
 build:
   merge_build_host: True  # [win]
@@ -62,7 +62,7 @@ extra:
     - conda-forge/r
 
 # Package: future
-# Version: 1.11.1.1
+# Version: 1.12.0
 # Title: Unified Parallel and Distributed Processing in R for Everyone
 # Imports: digest, globals (>= 0.12.4), listenv (>= 0.7.0), parallel, utils
 # Suggests: R.rsp, markdown
@@ -76,8 +76,8 @@ extra:
 # BugReports: https://github.com/HenrikBengtsson/future/issues
 # RoxygenNote: 6.1.1
 # NeedsCompilation: no
-# Packaged: 2019-01-25 18:10:06 UTC; hb
+# Packaged: 2019-03-08 00:12:48 UTC; hb
 # Author: Henrik Bengtsson [aut, cre, cph]
 # Maintainer: Henrik Bengtsson <henrikb@braju.com>
 # Repository: CRAN
-# Date/Publication: 2019-01-26 23:30:03 UTC
+# Date/Publication: 2019-03-08 19:32:41 UTC

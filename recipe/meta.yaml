@@ -1,4 +1,4 @@
-{% set version = "1.16.0" %}
+{% set version = "1.17.0" %}
 {% set posix = 'm2-' if win else '' %}
 {% set native = 'm2w64-' if win else '' %}
 
@@ -10,10 +10,10 @@ source:
   url:
     - {{ cran_mirror }}/src/contrib/future_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/future/future_{{ version }}.tar.gz
-  sha256: b50db0f28712c70b4c6a670d1c86b218e20870cc13b03ac45dc5d929168058f5
+  sha256: 2fa3b88439eaa33901669295186d04eb54f033257015683cf8a2e3c7f83b9e34
 
 build:
-  merge_build_host: True  # [win]
+  merge_build_host: true  # [win]
   number: 0
   noarch: generic
   rpaths:
@@ -42,20 +42,15 @@ test:
 about:
   home: https://github.com/HenrikBengtsson/future
   license: LGPL (>= 2.1)
-  summary: The purpose of this package is to provide a lightweight and unified Future API for
-    sequential and parallel processing of R expression via futures.  The simplest way
-    to evaluate an expression in parallel is to use `x %<-% { expression }` with `plan(multiprocess)`.
-    This package implements sequential, multicore, multisession, and cluster futures.  With
-    these, R expressions can be evaluated on the local machine, in parallel a set of
-    local machines, or distributed on a mix of local and remote machines. Extensions
-    to this package implement additional backends for processing futures via compute
-    cluster schedulers etc. Because of its unified API, there is no need to modify any
-    code in order switch from sequential on the local machine to, say, distributed processing
-    on a remote compute cluster. Another strength of this package is that global variables
-    and functions are automatically identified and exported as needed, making it straightforward
+  summary: The purpose of this package is to provide a lightweight and unified Future API for sequential and parallel processing of R expression via futures.  The
+    simplest way to evaluate an expression in parallel is to use `x %<-% { expression }` with `plan(multiprocess)`. This package implements sequential, multicore,
+    multisession, and cluster futures.  With these, R expressions can be evaluated on the local machine, in parallel a set of local machines, or distributed on a
+    mix of local and remote machines. Extensions to this package implement additional backends for processing futures via compute cluster schedulers etc. Because
+    of its unified API, there is no need to modify any code in order switch from sequential on the local machine to, say, distributed processing on a remote compute
+    cluster. Another strength of this package is that global variables and functions are automatically identified and exported as needed, making it straightforward
     to tweak existing code to make use of futures.
   license_family: LGPL
-  license_file: '{{ environ["PREFIX"] }}/lib/R/share/licenses/LGPL-2.1'
+  license_file: {{ environ["PREFIX"] }}/lib/R/share/licenses/LGPL-2.1
 
 extra:
   recipe-maintainers:

@@ -3,11 +3,13 @@ About r-future-feedstock
 
 Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/r-future-feedstock/blob/main/LICENSE.txt)
 
-Home: https://github.com/HenrikBengtsson/future
+Home: https://future.futureverse.org/
 
 Package license: LGPL-2.1-or-later
 
 Summary: The purpose of this package is to provide a lightweight and unified Future API for sequential and parallel processing of R expression via futures.  The simplest way to evaluate an expression in parallel is to use `x %<-% { expression }` with `plan(multiprocess)`. This package implements sequential, multicore, multisession, and cluster futures.  With these, R expressions can be evaluated on the local machine, in parallel a set of local machines, or distributed on a mix of local and remote machines. Extensions to this package implement additional backends for processing futures via compute cluster schedulers etc. Because of its unified API, there is no need to modify any code in order switch from sequential on the local machine to, say, distributed processing on a remote compute cluster. Another strength of this package is that global variables and functions are automatically identified and exported as needed, making it straightforward to tweak existing code to make use of futures.
+
+Development: https://github.com/HenrikBengtsson/future
 
 Current build status
 ====================

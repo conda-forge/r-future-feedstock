@@ -17,22 +17,27 @@ build:
   rpaths:
     - lib/R/lib/
     - lib/
+  missing_dso_whitelist:
+    - '*/R.dll'        # [win]
+    - '*/Rblas.dll'    # [win]
+    - '*/Rlapack.dll'  # [win]
 
 requirements:
   build:
     - {{ posix }}zip               # [win]
+    - cross-r-base {{ r_base }}    # [build_platform != target_platform]
   host:
     - r-base
     - r-digest
-    - r-globals >=0.16.1
+    - r-globals >=0.18.0
     - r-listenv >=0.8.0
-    - r-parallelly >=1.34.0
+    - r-parallelly >=1.44.0
   run:
     - r-base
     - r-digest
-    - r-globals >=0.16.1
+    - r-globals >=0.18.0
     - r-listenv >=0.8.0
-    - r-parallelly >=1.34.0
+    - r-parallelly >=1.44.0
 
 test:
   commands:

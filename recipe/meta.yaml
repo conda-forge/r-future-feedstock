@@ -1,4 +1,4 @@
-{% set version = "1.76.0" %}
+{% set version = "1.80.0" %}
 {% set posix = 'm2-' if win else '' %}
 
 package:
@@ -9,7 +9,7 @@ source:
   url:
     - {{ cran_mirror }}/src/contrib/future_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/future/future_{{ version }}.tar.gz
-  sha256: 0d78c3cfc53db83a1ea5aedbf100f5f73f55cda013a50a8ca2dcaddec7c37c0a
+  sha256: 95ee7292883e891770a927b29b57282011533256473e8d4db8436b46ee1f1d77
 
 build:
   number: 0
